@@ -1,0 +1,41 @@
+Name: Jean-Erick Voigt
+Date: 12 August 2017
+Current Module: DSA_II
+Project Name: STOCK TICKER
+
+Project Goals:
+	Project was designed to evaluate our ability to use data structures and abstract data types that we went over in class.  We had to read data from a file and sort that data based on symbol.  The data also needs to be able to accept price changes via STDIN. This data needs to be sorted by price
+Considerations:
+	<A bulleted list of considerations and conditions which affected the design of your project>
+File input
+stdin 
+The design of the binary search tree
+Resort data from tree
+Search tree and modify data
+Edge cases:
+Stock value can not exceed $1 million dollars
+Ticker symbol can not exceed 5 characters
+Stock value can not fall below $ 0.01
+Stock name can not exceed 64 ascii characters
+
+Initial Design:
+	This program was split into two modules.  The header module contained the structure for the Binary search Tree and the prototypes for my functions.  The main module contained the driver and the code for the functions.  
+
+Data Flow:
+	Initially, I verify that none of the files are null.  If they are NULL then there will be an exit statement and indicating that the file can’t be opened.  Then the program goes into its file parse function where it opens a file and iterates through to add those words and associated data in the binary search tree. Within this function memory is individually malloced for the root node. Afterwards, the nodes  will be malloced in a loop if the node that is passed is NULL.  Once the first word is added to the tree then the next word will be compared to it using strcasecmp in order to determine if it is bigger or smaller.  If the word is bigger than it will go to node->right and if it smaller it will go to node->left of the node it was compared to.  Next, the function is recursively call on itself, and updated records.    
+
+Communication Protocol:
+	<Discuss any custom communication protocol you have used including the various request and responses that may be sent and received.> 
+
+Potential Pitfalls: 
+	The pitfalls are problems with stdin, and opening and closing files.
+
+Test Plan:
+	User Test:
+ 		No test were conducted due to the fact that I was still working on the code.  However, the professor provided test cases to model off of.  Additional test cases might have included files with all delimiters present to see how those delimiters, files that were too big that could only be read a chunk at a time and if the file started with a delimiter.  
+
+Test Cases:
+	The test cases were provided by the teacher.  	
+
+Conclusion:
+	The project gave me some trouble with sorting on price and other edge cases.  
