@@ -1,0 +1,133 @@
++--------------------------------------------+
+|         screen and store valid data        |
++--------------------------------------------+
+IBM 8745.81 International Business Machines
+AAPL 87.95 Apple Inc.
+Error: price longer than 10 characters. The record will be skipped.
+Error: price is larger than $1,000,000.00. The record will be skipped.
+X-RAY 8990.93 X-ray Laboratries
+PWC 107.00 PricewaterhouseCoopers
+UMBC 17.42 UMBC Training Centers
+GOOG 730.96 Alphabet, Inc.
+INC-A 99.51 Incorporated Inc.
+NKE 61.20 Nike, Inc.
+LARGE 1000000.00 At the limit
+WMT 64.22 Wal-Mart Stores Inc.
+CORPX 51.95 Corportation X
+Error: ticker symbol longer than 5 characters. The record will be skipped.
+CYBER 26.99 Security Agency
+Error: price is larger than $1,000,000.00. The record will be skipped.
+AAL 38.14 American Airlines Group Inc.
+BRK-A 188300.00 Berkshire Hathaway Inc.
+
++--------------------------------------------+
+|          valid data after screening        |
++--------------------------------------------+
+IBM 8745.81 International Business Machines
+AAPL 87.95 Apple Inc.
+X-RAY 8990.93 X-ray Laboratries
+PWC 107.00 PricewaterhouseCoopers
+UMBC 17.42 UMBC Training Centers
+GOOG 730.96 Alphabet, Inc.
+INC-A 99.51 Incorporated Inc.
+NKE 61.20 Nike, Inc.
+LARGE 1000000.00 At the limit
+WMT 64.22 Wal-Mart Stores Inc.
+CORPX 51.95 Corportation X
+CYBER 26.99 Security Agency
+AAL 38.14 American Airlines Group Inc.
+BRK-A 188300.00 Berkshire Hathaway Inc.
+
++--------------------------------------------+
+|     valid data sorted by ticker symbol     |
++--------------------------------------------+
+AAL 38.14 American Airlines Group Inc.
+AAPL 87.95 Apple Inc.
+BRK-A 188300.00 Berkshire Hathaway Inc.
+CORPX 51.95 Corportation X
+CYBER 26.99 Security Agency
+GOOG 730.96 Alphabet, Inc.
+IBM 8745.81 International Business Machines
+INC-A 99.51 Incorporated Inc.
+LARGE 1000000.00 At the limit
+NKE 61.20 Nike, Inc.
+PWC 107.00 PricewaterhouseCoopers
+UMBC 17.42 UMBC Training Centers
+WMT 64.22 Wal-Mart Stores Inc.
+X-RAY 8990.93 X-ray Laboratries
+
++--------------------------------------------+
+|               begin trading                |
++--------------------------------------------+
+AAPL 11.00 
+DEC 80.05 
+WMT 21.50 
+IBM -8745.79 
+NKE -59.97 
+AAL -38.15 
+Attempt adjust stock below $0.01.  Transaction will NOT be completed
+LARGE -999999.99 
+PWC 7.50 
+IBM 1001.00 
+T 89.25 
+AAPL -27.44 
+PWC -1.25 
+AAPL -58.72 
+NKE -2.00 
+Attempt adjust stock below $0.01.  Transaction will NOT be completed
+X-RAY -8990.92 
+DEC 13.55 
+T -90.50 
+Attempt adjust stock below $0.01.  Transaction will NOT be completed
+AAPL 15.01 
+CYBER -25.99 
+DEC -93.59 
+AAPL -27.02 
+X-RAY 0.01 
+WMT 13.44 
+PWC -119.50 
+Attempt adjust stock below $0.01.  Transaction will NOT be completed
+WMT -99.16 
+Attempt adjust stock below $0.01.  Transaction will NOT be completed
+BRK-A -188298.10 
+
++----------------------------------------------+
+| stocks sorted by ticker symbol after trading |
++----------------------------------------------+
+AAL 38.14 American Airlines Group Inc.
+AAPL 0.78 Apple Inc.
+BRK-A 1.90 Berkshire Hathaway Inc.
+CORPX 51.95 Corportation X
+CYBER 1.00 Security Agency
+DEC 0.01 
+GOOG 730.96 Alphabet, Inc.
+IBM 1001.02 International Business Machines
+INC-A 99.51 Incorporated Inc.
+LARGE 0.01 At the limit
+NKE 1.23 Nike, Inc.
+PWC 113.25 PricewaterhouseCoopers
+T 89.25 
+UMBC 17.42 UMBC Training Centers
+WMT 99.16 Wal-Mart Stores Inc.
+X-RAY 0.02 X-ray Laboratries
+
++--------------------------------------------+
+|   stocks sorted by price after trading     |
++--------------------------------------------+
+DEC 0.01 
+LARGE 0.01 At the limit
+X-RAY 0.02 X-ray Laboratries
+AAPL 0.78 Apple Inc.
+CYBER 1.00 Security Agency
+NKE 1.23 Nike, Inc.
+BRK-A 1.90 Berkshire Hathaway Inc.
+UMBC 17.42 UMBC Training Centers
+AAL 38.14 American Airlines Group Inc.
+CORPX 51.95 Corportation X
+T 89.25 
+WMT 99.16 Wal-Mart Stores Inc.
+INC-A 99.51 Incorporated Inc.
+PWC 113.25 PricewaterhouseCoopers
+GOOG 730.96 Alphabet, Inc.
+IBM 1001.02 International Business Machines
+

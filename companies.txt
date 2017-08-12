@@ -1,0 +1,18 @@
+IBM 8745.81 International Business Machines
+AAPL 87.95 Apple Inc.
+LONG 12345678901 Way too long!
+BIG 1000000.50 Too big!
+X-RAY 8990.93 X-ray Laboratries
+PWC 107.00 PricewaterhouseCoopers
+UMBC 17.42 UMBC Training Centers
+GOOG 730.96 Alphabet, Inc.
+INC-A 99.51 Incorporated Inc.
+NKE 61.20 Nike, Inc.
+LARGE 1000000.0 At the limit
+WMT 64.22 Wal-Mart Stores Inc.
+CORPX 51.95 Corportation X
+GARBAGE 87.60 This is garbage
+CYBER 26.99 Security Agency
+BIG 1000000.75
+AAL 38.14 American Airlines Group Inc.
+BRK-A 188300.00 Berkshire Hathaway Inc.
