@@ -26,6 +26,8 @@ void file_parse(FILE *fp)
 //	int ret;
 	struct company *comp = NULL;
 	struct tree *root = NULL;
+	struct tree *current = NULL;
+	struct tree *root_by_price = NULL;
 //	struct tree *head = NULL;
 	while(fscanf(fp, "%s %lf", symbol, &price) != EOF && fgets(name, 64, fp)){
 
@@ -38,7 +40,7 @@ void file_parse(FILE *fp)
 //		printf("This is stock\n");
 //		printf("%s %lu %s\n", head->data->symbol, head->data->cents, head->data->name);
 		if(root == NULL){
-			root = init_tree(comp);
+			root_by_price = current = root = init_tree(comp);
 			//printf("this is root if statement\n");
 		}
 //		printf("This is root\n");
@@ -62,6 +64,11 @@ void file_parse(FILE *fp)
 //	printf("last symbol and price_change  %s %s\n", symbol, price_change);
 	
 	search_and_update(root, price_change, symbol);
+	
+//	added lines of code
+	tree_insert_by_price(root_by_price, current, root);
+	printf("\n");
+	inorder(root_by_price);
 	//fclose(fp);
 }
 
@@ -121,6 +128,15 @@ void search_and_update(struct tree *root, char price_change[10], char symbol[6])
 	//	printf("%d\n", operand);
 	//printf("String length of price_change is %d\n", strlen(price_change));
 }
+struct tree *copy_init_tree(struct tree *current)
+{
+	struct tree *t = NULL;
+	t = malloc(sizeof(t));
+	t->left = t->right  = NULL;
+	t -> data = current->data;
+	return(t);
+}
+
 struct tree *init_tree(struct company *company)
 {
 	struct tree *t = NULL;
@@ -178,7 +194,39 @@ void tree_search(struct tree *root, char word[], int price)
 		
 	}
 }
-void tree_insert(struct tree *root, struct company  *compan)
+
+void tranverse_tree(struct tree *root, struct tree *root_by_price, struct tree *current)
+{
+	if(current !=  NULL){
+		tranverse_tree(root, root_by_price, current->left);
+		tree_insert_by_price(root_by_price, current, root);
+		tranverse_tree(root, root_by_price, current->right);
+	}
+}
+
+
+void tree_insert_by_price(struct tree * root_by_price, struct tree *current, struct tree *root)
+{
+		
+	if(root_by_price->data->cents < current->data->cents){
+		if (root_by_price->left != NULL){
+			tree_insert_by_price(root_by_price->left, current, root);
+		}else{
+			root_by_price->left = copy_init_tree(current);
+		}
+	}
+	else if(root_by_price->data->cents > root->data->cents){
+		if (root_by_price->right != NULL){
+			tree_insert_by_price(root_by_price->left,current, root);
+		}else{
+			root_by_price->left = copy_init_tree(root);
+		}
+	}else{
+		;
+	}
+}
+//*/
+void tree_insert(struct tree *root, struct company *compan)
 {
 	int value;
 	value = strcasecmp(compan->symbol, root->data->symbol);
@@ -216,4 +264,5 @@ void inorder(struct tree *root)
 	//printf("\n")
 	//printf("%s %lu %s \n", root->data->symbol, root->data->cents, root->data->name);
 }
+
 
